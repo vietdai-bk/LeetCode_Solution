@@ -13,13 +13,23 @@ void genSubsequence(int pos, int n, int k, int cur);
 vector<int> permutation;
 void genPermutation(int pos, vector<int>& nums);
 
+// Tập con không lặp
+vector<vector<int>> subArr;
+vector<int> oneSubArr;
+void genSubArr(int start, vector<int> nums);
+
 // Hàm main
 int main() {
     const int n = 9, k = 4;
-    vector<int> nums = {1, 2, 3, 4, 5, 6};
+    vector<int> nums = {1, 2, 3};
     // genString(0, n);
     // genSubsequence(0, n, k, 1);
-    genPermutation(0, nums);
+    // genPermutation(0, nums);
+    genSubArr(0, nums);
+    for (auto &row : subArr) {
+        for (int x : row) cout << x << " "; 
+        cout << endl;
+    }
 }
 
 void genString(int pos, int n) {
@@ -60,5 +70,14 @@ void genPermutation(int pos, vector<int>& nums) {
             genPermutation(pos+1, nums);
             permutation.pop_back();
         }
+    }
+}
+
+void genSubArr(int start, vector<int> nums) {
+    subArr.push_back(oneSubArr);
+    for (int i=start;i<nums.size();i++) {
+        oneSubArr.push_back(nums[i]);
+        genSubArr(i+1, nums);
+        oneSubArr.pop_back();
     }
 }
