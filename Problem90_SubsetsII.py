@@ -17,3 +17,4 @@ class Solution:
 if __name__=="__main__":
     solve = Solution()
     print(solve.subsetsWithDup([1,2,2]))
+    print(pow(2,16))
