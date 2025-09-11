@@ -23,4 +23,4 @@ class Solution:
     
 if __name__ == "__main__":
     solve = Solution()
-    print(solve.grayCode(2))
+    print(solve.grayCode(5))
