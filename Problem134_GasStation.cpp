@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
 public:
-    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) { // đúng nhưng O(n^2) => time exceed        
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) { // đúng nhưng O(n^2) => time exceed
         int n = gas.size();
         for (int i=0;i<n;i++) {
             int start_index = i;
